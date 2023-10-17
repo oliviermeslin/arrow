@@ -604,6 +604,7 @@ void RowArrayMerge::CopyVaryingLength(RowTableImpl* target, const RowTableImpl& 
       for (uint32_t word = 0; word < length / sizeof(uint64_t); ++word) {
         *target_row_ptr++ = *source_row_ptr++;
       }
+      cout << "word is equal to " << word; 
 
       target_offsets[first_target_row_id + i] = static_cast<uint32_t>(target_row_offset);
       target_row_offset += length;
